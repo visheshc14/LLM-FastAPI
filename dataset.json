@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "text": "This is the first example text."
+    },
+    {
+      "id": 2,
+      "text": "Here's another example text."
+    },
+    {
+      "id": 3,
+      "text": "This is a third text sample."
+    },
+    {
+      "id": 4,
+      "text": "Yet another text for the dataset."
+    },
+    {
+      "id": 5,
+      "text": "One last text to complete the dataset."
+    }
+  ]
+  

@@ -5,15 +5,21 @@ This project demonstrates the implementation of a Language Model Server using Fa
 Getting Started
 To set up and run the project, follow the steps below:
 
-Install the required Python packages by running `pip install -r requirements.txt`.
+Install the required Python packages by running 
+    ```bash
+    pip install -r requirements.txt.
+    ```
 
-Train the language model using `trainer.py`. Provide the dataset file (--fp argument) and other training arguments as needed. The trained model weights will be saved in a specified location.
+Train the language model using `trainer.py`. Provide the dataset file (`--fp argument`) and other training arguments as needed. The trained model weights will be saved in a specified location.
 
 Start the language model server by running `uvicorn server:app --host 0.0.0.0 --port 8000`. The server will listen on `http://localhost:8000` and accept text generation requests.
 
-Use the provided APIs or client.py to generate text by sending requests to the server. Example curl command: `curl -X POST -H "Content-Type: application/json" -d '{"text": "Hello"}' http://localhost:8000/generate.`
+Use the provided APIs or client.py to generate text by sending requests to the server. Example curl command: 
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"text": "Hello"}' http://localhost:8000/generate
+```
 
-Optionally, use `test.py` to stress test the server's performance and evaluate its response time under load.
+Optionally, use test.py to stress test the server's performance and evaluate its response time under load.
 
 ## Crux: ML Engineer
 
@@ -23,7 +29,7 @@ Bonus points:
 - if LLM can give coherent reply
 - a file `test.py` that can:
   - stress test the server using `multithreading`
-  - provide a CLI for using the model **fast**
+  - provide a CLI for using the model *fast*
 
 Ultra bonus points:
 - you use gRPC over HTTP/REST
