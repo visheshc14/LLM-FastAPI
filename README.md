@@ -22,7 +22,7 @@ Optionally, use test.py to stress test the server's performance and evaluate its
 
 Define the Protobuf service and message types in text_generator.proto:
 
-`syntax = "proto3";
+syntax = "proto3";
 
 package textgenerator;
 
@@ -36,10 +36,10 @@ message TextRequest {
 
 message TextResponse {
   string generated_text = 1;
-}`
+}
 
 Generate the gRPC code using the protoc compiler, you need to install the protobuf and grpcio-tools packages:
-pip install protobuf grpcio-tools
+`pip install protobuf grpcio-tools`
 
 Generate the gRPC code by running the following command:
 `python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. text_generator.proto`
