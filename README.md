@@ -18,8 +18,35 @@ Use the provided APIs or client.py to generate text by sending requests to the s
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"text": "Hello"}' http://localhost:8000/generate
 ```
-
 Optionally, use test.py to stress test the server's performance and evaluate its response time under load.
+
+Define the Protobuf service and message types in text_generator.proto:
+
+`syntax = "proto3";
+
+package textgenerator;
+
+service TextGenerator {
+  rpc GenerateText(TextRequest) returns (TextResponse) {}
+}
+
+message TextRequest {
+  string text = 1;
+}
+
+message TextResponse {
+  string generated_text = 1;
+}`
+
+Generate the gRPC code using the protoc compiler, you need to install the protobuf and grpcio-tools packages:
+pip install protobuf grpcio-tools
+
+Generate the gRPC code by running the following command:
+`python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. text_generator.proto`
+
+After running the command, you will see two new files generated in the current directory:
+- `text_generator_pb2.py`: Contains the generated code for the Protobuf messages.
+- `text_generator_pb2_grpc.py`: Contains the generated code for the gRPC service.
 
 ## Crux: ML Engineer
 
